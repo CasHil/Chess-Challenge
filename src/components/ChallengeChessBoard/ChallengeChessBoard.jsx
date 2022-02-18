@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Chess from "chess.js";
 import { Chessboard } from "react-chessboard";
+import "./ChallengeChessBoard.css";
 
 export default function ChallengeChessBoard() {
   const [game, setGame] = useState(new Chess());
@@ -25,5 +26,9 @@ export default function ChallengeChessBoard() {
     return true;
   }
 
-  return <Chessboard position={game.fen()} onPieceDrop={onDrop} />;
+  return (
+    <div className="board">
+      <Chessboard position={game.fen()} onPieceDrop={onDrop} />
+    </div>
+  );
 }
