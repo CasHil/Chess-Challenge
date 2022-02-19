@@ -3,6 +3,6 @@ import challengeReducer from "../components/ChallengeSelector/challengeSelectorS
 
 export default configureStore({
   reducer: {
-    challengeReducer: challengeReducer,
+    challengeSelector: challengeReducer,
   },
 });

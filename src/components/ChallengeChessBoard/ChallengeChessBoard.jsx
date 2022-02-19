@@ -3,7 +3,6 @@ import Chess from "chess.js";
 import { Chessboard } from "react-chessboard";
 import "./ChallengeChessBoard.css";
 import { useSelector, useDispatch } from "react-redux";
-import { setChallenges } from "./challengeSelectorSlice";
 
 export default function ChallengeChessBoard() {
   const [game, setGame] = useState(new Chess());
@@ -25,6 +24,7 @@ export default function ChallengeChessBoard() {
       move = game.move({
         from: sourceSquare,
         to: targetSquare,
+        promotion: "q",
       });
     });
     if (move === null) return false;
